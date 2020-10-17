@@ -7,6 +7,6 @@ class DefaultHTMLHandler(web.RequestHandler):
 class DefaultJSONHandler(web.RequestHandler):
 	@gen.coroutine
 	def get(self,args):
-    data = {}
+		data = {}
 		self.write(json.dumps(data))
 		self.finish()
