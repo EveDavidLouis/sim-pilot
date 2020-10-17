@@ -20,7 +20,7 @@ class Application(web.Application):
             (r"/styles/(.*)"        , web.StaticFileHandler,{'path': 'docs/styles'}),
             (r"/scripts/(.*)"       , web.StaticFileHandler,{'path': 'docs/scripts'}),
             (r"/json(.*)"           , webHandler.DefaultJSONHandler),
-            (r"(.*)"                , web.StaticFileHandler,{'path': 'docs/index.html'}),
+            (r"/(.*)"               , web.StaticFileHandler,{'path': 'docs/index.html'}),
             (r""                    , web.StaticFileHandler,{'path': 'docs/index.html'}),
             ]
         settings = dict(
