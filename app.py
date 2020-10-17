@@ -17,13 +17,13 @@ class Application(web.Application):
         handlers = [
             (r"/images/(.*)"        , web.StaticFileHandler,{'path': 'docs/images'}),
             (r"/templates/(.*)"     , web.StaticFileHandler,{'path': 'docs/templates'}),
-            (r"/styles/(.*)"        , web.StaticFileHandler, {'path': 'docs/styles'}),
+            (r"/styles/(.*)"        , web.StaticFileHandler,{'path': 'docs/styles'}),
             (r"/scripts/(.*)"       , web.StaticFileHandler,{'path': 'docs/scripts'}),
             (r"/index.html"         , web.StaticFileHandler,{'path': 'docs/index.html'}),
             (r"/json/(.*)"          , webHandler.DefaultJSONHandler),
             (r"/json(.*)"           , webHandler.DefaultJSONHandler),
             (r"/(.*)"               , webHandler.DefaultHTMLHandler),
-            (r""                    , webHandler.DefaultHTMLHandler),
+            (r"(.*)"                , webHandler.DefaultHTMLHandler),
             ]
         settings = dict(
             cookie_secret=config.server['secret'],
