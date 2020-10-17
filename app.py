@@ -21,6 +21,7 @@ class Application(web.Application):
             (r"/scripts/(.*)"       , web.StaticFileHandler,{'path': 'docs/scripts'}),
             (r"/index.html"         , web.StaticFileHandler,{'path': 'docs/index.html'}),
             (r"/json/(.*)"          , webHandler.DefaultJSONHandler),
+            (r"/json(.*)"           , webHandler.DefaultJSONHandler),
             (r"/(.*)"               , webHandler.DefaultHTMLHandler),
             (r""                    , webHandler.DefaultHTMLHandler),
             ]
