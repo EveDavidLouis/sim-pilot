@@ -9,5 +9,5 @@ logging.basicConfig(level=logging.WARNING)
 
 if __name__ == "__main__":
   
-  for c in config:
+  for c in config.server:
     print(str(c))
