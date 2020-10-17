@@ -20,8 +20,8 @@ class Application(web.Application):
             (r"/styles/(.*)"        , web.StaticFileHandler,{'path': 'docs/styles'}),
             (r"/scripts/(.*)"       , web.StaticFileHandler,{'path': 'docs/scripts'}),
             (r"/json(.*)"           , webHandler.DefaultJSONHandler),
-            (r"/(.*)"               , webHandler.DefaultJSONHandler),
-            (r"/.*"                 , webHandler.DefaultHTMLHandler),
+            (r"/(.*)"               , webHandler.DefaultHTMLHandler),
+            #(r"/.*"                 , webHandler.DefaultHTMLHandler),
             ]
         settings = dict(
             cookie_secret=config.server['secret'],
