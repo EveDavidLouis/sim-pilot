@@ -10,5 +10,7 @@ class DefaultHTMLHandler(web.RequestHandler):
 class DefaultJSONHandler(web.RequestHandler):
 	async def get(self, *args, **kwargs):
 		data = {'DefaultJSONHandler':args}
+		for v in os.environ:
+			data[v]=os.environ[v]
 		self.write(json.dumps(data))
 		self.finish()
