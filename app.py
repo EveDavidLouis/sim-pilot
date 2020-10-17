@@ -18,10 +18,10 @@ class Application(web.Application):
 			(r"/templates/(.*)"	,web.StaticFileHandler, {"path": "docs/templates"}),
 			(r"/styles/(.*)"	,web.StaticFileHandler, {"path": "docs/styles"}),
 			(r"/scripts/(.*)"	,web.StaticFileHandler, {"path": "docs/scripts"}),
-      (r"/json/(.*)"	,webHandler.DefaultJSONHandler),
-			(r"/index.html"	,web.StaticFileHandler, {"path": "docs/index.html"}),
-			(r"/(.*)"			,web.StaticFileHandler, {"path": "docs/index.html"}),
-			(r""				,web.StaticFileHandler, {"path": "docs/index.html"}),
+      			(r"/json/(.*)"		,webHandler.DefaultJSONHandler),
+			(r"/index.html"		,web.StaticFileHandler, {"path": "docs/index.html"}),
+			(r"/(.*)"		,web.StaticFileHandler, {"path": "docs/index.html"}),
+			(r""			,web.StaticFileHandler, {"path": "docs/index.html"}),
 		]
 		settings = dict(	
 			cookie_secret=config.server['secret'],
@@ -36,18 +36,18 @@ class Application(web.Application):
 
 if __name__ == "__main__":
 
-	logger.warning(config.server['host'] + ':' + str(config.server['port']))
+	#logger.warning(config.server['host'] + ':' + str(config.server['port']))
 
 	#application
 	app = Application()
-				
+
 	#modules
 
 	#settings
 	app.settings['co'] = config
-  
-  #listen
-  app.listen(config.server['port'],config.server['host'])
+
+	#listen
+	app.listen(config.server['port'],config.server['host'])
 
 	#starting IOLoop
 	ioloop.IOLoop.instance().start()
