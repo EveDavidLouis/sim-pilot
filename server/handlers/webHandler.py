@@ -1,3 +1,4 @@
+import json
 from tornado import web
 
 class DefaultHTMLHandler(web.RequestHandler):
@@ -7,6 +8,6 @@ class DefaultHTMLHandler(web.RequestHandler):
 
 class DefaultJSONHandler(web.RequestHandler):
 	async def get(self,args):
-		data = {}
+		data = {'data':args}
 		self.write(json.dumps(data))
 		self.finish()
