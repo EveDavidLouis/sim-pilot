@@ -17,7 +17,7 @@ class DefaultJSONHandler(web.RequestHandler):
 		self.write(json.dumps(data))
 		self.finish()
 
-class authHandler(web.RequestHandler):
+class AuthHandler(web.RequestHandler):
 
 	async def get(self,args):
 		data_post = {
