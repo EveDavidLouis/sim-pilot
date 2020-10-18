@@ -13,9 +13,8 @@ if os.environ.get('PORT'): server['port'] = int(os.environ.get('PORT'))
 #mongodb
 mongodb = dict(
 	host 		= os.environ.get('MONGO_HOST','localhost')
-	,port 		= int(os.environ.get('MONGO_PORT',27017))
 	,user 		= os.environ.get('MONGO_USER','admin')
 	,pwd 		= os.environ.get('MONGO_PWD','1234')
 	,db 		= os.environ.get('MONGO_DB','test')
 )
-mongodb['url'] = 'mongodb://'+mongodb['user']+':'+ mongodb['pwd'] +'@'+str(mongodb['host'])+':'+str(mongodb['port']) +'/' + mongodb['db'] 
+mongodb['url'] = 'mongodb+srv://'+mongodb['user']+':'+ mongodb['pwd'] +'@'+str(mongodb['host'])+'/' + mongodb['db'] +'?retryWrites=true&w=majority'
