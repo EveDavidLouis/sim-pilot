@@ -21,6 +21,7 @@ class Application(web.Application):
 			(r"/scripts/(.*)"       , web.StaticFileHandler,{'path': 'docs/scripts'}),
 			(r"/dbTest(.*)"         , webHandler.DbTestHandler),
 			(r"/json(.*)"           , webHandler.DefaultJSONHandler),
+			(r"/auth(.*)"           , webHandler.AuthHandler),
 			(r"/(.*)"               , webHandler.DefaultHTMLHandler),
 			]
 		settings = dict(
