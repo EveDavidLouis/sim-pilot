@@ -17,6 +17,21 @@ class DefaultJSONHandler(web.RequestHandler):
 		self.write(json.dumps(data))
 		self.finish()
 
+class authHandler(web.RequestHandler):
+
+	async def get(self,args):
+		data_post = {
+			'username': '',
+			'password': ''
+		}
+		check = 1
+		if check:
+			authToken = '123'
+			self.write(json.dumps({'authToken':authToken}))
+		else:
+			self.write(json.dumps({'status':'denied'}))
+		self.finish()
+		
 class DbTestHandler(web.RequestHandler):
 
 	async def get(self,args):
